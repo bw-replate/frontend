@@ -1,4 +1,5 @@
 import React from 'react';
+import BusinessProfile from './components/BusinessProfile';
 
 //components
 
@@ -9,6 +10,7 @@ function App() {
   return (
     <div className="App">
       <h1> Replate </h1>
+      <BusinessProfile />
     </div>
   );
 }//end App
