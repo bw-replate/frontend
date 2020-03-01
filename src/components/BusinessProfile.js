@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import ProfileForm from './businessprofile/ProfileForm';
-import Profiles from './businessprofile/Profiles';
+import ProfileForm from './BusinessProfile/ProfileForm';
+import Profiles from './BusinessProfile/Profiles';
 
 function BusinessProfile() {
     const [profiles, setProfiles] = useState([
