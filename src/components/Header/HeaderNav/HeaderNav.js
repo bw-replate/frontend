@@ -10,6 +10,8 @@ const HeaderNav = () => {
       <nav>
         <ul>
           <li><NavLink to='/'>Nav item</NavLink></li>
+          <li><NavLink to='/'>Nav item</NavLink></li>
+          <li><NavLink to='/'>Nav item</NavLink></li>
         </ul>
       </nav>
     </>

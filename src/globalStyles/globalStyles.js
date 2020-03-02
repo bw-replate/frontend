@@ -4,17 +4,17 @@
 import styled, {createGlobalStyle} from 'styled-components';
 import {fontStyles, theme} from './styleVars';
 
-// const GlobalStyle= createGlobalStyle`
-//   *{
-//     padding: 0;
-//     margin: 0;
-//     box-sizing: border-box;
-//   }
+const GlobalStyle= createGlobalStyle`
+  *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
 
-//   body{
-//     font-size: 62.5%; 
-//   }
-// `;
+  body{
+    font-size: 62.5%; 
+  }
+`;
 
 // **************** CONTAINER **************** //
   const AppCont= styled.div`
