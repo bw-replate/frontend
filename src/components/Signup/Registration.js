@@ -3,8 +3,7 @@ import { withFormik, Form, Field } from 'formik';
 import axios from 'axios';
 import * as Yup from 'yup';
 
-<<<<<<< HEAD
-const BusinessProfile = ({ values, errors, touched, status }) => {
+const Registration = ({ values, errors, touched, status }) => {
     const [users, setUsers] = useState([]);
 
     useEffect(() =>{
@@ -23,25 +22,15 @@ const BusinessProfile = ({ values, errors, touched, status }) => {
                     />
                     {touched.name && errors.name && (<p className="errors">{errors.name}</p>)}
                 </label>
-                <label htmlFor="businessName">
+                <label htmlFor="password">
                     Name
                     <Field
-                        id="businessName"
-                        type="businessName"
-                        name="businessName"
-                        placeholder="Name of Business"
+                        id="password"
+                        type="password"
+                        name="password"
+                        placeholder="password"
                     />
-                    {touched.businessName && errors.businessName && (<p className="errors">{errors.businessName}</p>)}
-                </label>
-                <label htmlFor="businessAddress">
-                    Name
-                    <Field
-                        id="businessAddress"
-                        type="businessAddress"
-                        name="businessAddress"
-                        placeholder="Address"
-                    />
-                    {touched.businessAddress && errors.businessAddress && (<p className="errors">{errors.businessAddress}</p>)}
+                    {touched.password && errors.password && (<p className="errors">{errors.password}</p>)}
                 </label>
                 <label htmlFor="phoneNumber">
                     Email
@@ -61,7 +50,7 @@ const BusinessProfile = ({ values, errors, touched, status }) => {
                         name="tos"
                         checked={values.tos}
                     />
-                    {errors.tos && touched.tos && (<p className="errors">{errors.tos}</p>)}
+                    {errors.tos && (<p className="errors">{errors.tos}</p>)}
                     <span className="checkmark" />
                 </label>
                 <button type="submit">Register</button>
@@ -70,8 +59,7 @@ const BusinessProfile = ({ values, errors, touched, status }) => {
                 return (
                     <ul key={user.id}>
                         <li>Name: {user.name}</li>
-                        <li>Business: {user.businessName}</li>
-                        <li>Address: {user.businessAddress}</li>
+                        <li>Password: {user.password}</li>
                         <li>Number: {user.phoneNumber}</li>
                     </ul>
                 )
@@ -80,20 +68,19 @@ const BusinessProfile = ({ values, errors, touched, status }) => {
     );
 };
 
-const FormikBusinessProfile = withFormik({
+const FormikRegistration = withFormik({
     mapPropsToValues(props) {
         return {
             name: props.name || '',
             phoneNumber: props.phoneNumber || '',
-            businessName: props.businessName || '',
-            businessAddress: props.businessAddress || '',
+            password: props.password || '',
             tos: props.tos || false
         };
     },
     validationSchema: Yup.object().shape({
         name: Yup.string().required(),
-        businessName: Yup.string().required(),
-        businessAddress: Yup.string().required(),
+        email: Yup.string().required(),
+        password: Yup.string().required(),
         tos: Yup.bool().oneOf([true],"Please accept Terms of Service to Continue").required()
     }),
     handleSubmit(values, { setStatus, resetForm}) {
@@ -104,35 +91,5 @@ const FormikBusinessProfile = withFormik({
                 })
                 .catch(err => console.log(err.response))
     }
-})(BusinessProfile)
-export default FormikBusinessProfile;
-=======
-function BusinessProfile() {
-  const [profiles, setProfiles] = useState([
-    {
-      username: '',
-      businessName: '',
-      businessAddress: '',
-      phoneNumber: ''
-    }
-  ]);
-  const addProfile = profile => {
-    const newProfile = {
-      id: Date.now(),
-      username: profile.username,
-      businessName: profile.businessName,
-      businessAddress: profile.businessAddress,
-      phoneNumber: profile.phoneNumber
-    }
-    setProfiles([...profiles, newProfile])
-    return (
-      <div>
-        <h1>Profile</h1>
-        <ProfileForm addProfile={addProfile} />
-        <Profiles profiles={profiles} />
-      </div>
-    )
-  }
-}
-export default BusinessProfile;
->>>>>>> 599b1d81dd0d1b2360ea7ff339510dc5d0696f10
+})(Registration)
+export default FormikRegistration;
