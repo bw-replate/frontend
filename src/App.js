@@ -1,5 +1,5 @@
 import React from 'react';
-import BusinessProfile from './components/BusinessProfile';
+import Login from './components/Login/Login';
 
 //components
 
@@ -9,8 +9,12 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-    
+      {/* header/nav */}
+
+    {/* site heading */}
       <h1> Replate </h1>
+
+      {/* login component */}
     </div>
   );
 }//end App
