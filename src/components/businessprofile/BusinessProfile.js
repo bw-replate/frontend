@@ -3,6 +3,7 @@ import { withFormik, Form, Field } from 'formik';
 import axios from 'axios';
 import * as Yup from 'yup';
 
+<<<<<<< HEAD
 const BusinessProfile = ({ values, errors, touched, status }) => {
     const [users, setUsers] = useState([]);
 
@@ -105,3 +106,33 @@ const FormikBusinessProfile = withFormik({
     }
 })(BusinessProfile)
 export default FormikBusinessProfile;
+=======
+function BusinessProfile() {
+  const [profiles, setProfiles] = useState([
+    {
+      username: '',
+      businessName: '',
+      businessAddress: '',
+      phoneNumber: ''
+    }
+  ]);
+  const addProfile = profile => {
+    const newProfile = {
+      id: Date.now(),
+      username: profile.username,
+      businessName: profile.businessName,
+      businessAddress: profile.businessAddress,
+      phoneNumber: profile.phoneNumber
+    }
+    setProfiles([...profiles, newProfile])
+    return (
+      <div>
+        <h1>Profile</h1>
+        <ProfileForm addProfile={addProfile} />
+        <Profiles profiles={profiles} />
+      </div>
+    )
+  }
+}
+export default BusinessProfile;
+>>>>>>> 599b1d81dd0d1b2360ea7ff339510dc5d0696f10
