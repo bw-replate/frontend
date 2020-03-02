@@ -13,14 +13,13 @@ function BusinessProfile() {
     ]);
     const addProfile = profile => {
         const newProfile = {
-            id: Date.now(),
+            id: Date.now(), 
             username: profile.username,
             businessName: profile.businessName,
             businessAddress: profile.businessAddress,
             phoneNumber: profile.phoneNumber
         }
         setProfiles([...profiles, newProfile])
-    }
     return (
         <div>
             <h1>Profile</h1>
