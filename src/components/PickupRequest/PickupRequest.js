@@ -2,6 +2,8 @@
 // - `amount` of food item by count/weight: Integer
 // - `preferredPickupTime`: datetime
 
+//need assigned and unassigned pick up requests.. 2 different components???
+
 import React from 'react';
 
 //styles
