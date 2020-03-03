@@ -3,7 +3,7 @@ import { withFormik, Form, Field } from 'formik';
 import axios from 'axios';
 import * as Yup from 'yup';
 
-const Profile = ({ values, errors, touched, status }) => {
+const BusinessProfile = ({ values, errors, touched, status }) => {
     const [users, setUsers] = useState([]);
 
     useEffect(() =>{
@@ -79,7 +79,7 @@ const Profile = ({ values, errors, touched, status }) => {
     );
 };
 
-const FormikProfile = withFormik({
+const FormikBusinessProfile = withFormik({
     mapPropsToValues(props) {
         return {
             name: props.name || '',
@@ -103,5 +103,5 @@ const FormikProfile = withFormik({
                 })
                 .catch(err => console.log(err.response))
     }
-})(Profile)
-export default FormikProfile;
+})(BusinessProfile)
+export default FormikBusinessProfile;
