@@ -5,7 +5,7 @@ import './HeaderStyles';
 
 export const Header = () => {
   return (
-    <div>
+    <div className= 'headerCont'>
       
     </div>
   )

@@ -1,13 +1,16 @@
 import React from 'react';
 
+//components
+import HeaderNav from '../Header/HeaderNav/HeaderNav';
+
 //styles
 import './AccountStyles';
 
 const Account = () => {
   return (
-    <div>
-      
-    </div>
+    <>
+      <HeaderNav />
+    </>
   )
 }//end Account
 
