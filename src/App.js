@@ -1,10 +1,10 @@
-import React from 'react';
-import BusinessProfile from './components/BusinessProfile';
+import React from "react";
+import BusinessProfile from "./components/BusinessProfile";
 
 //components
 
 //styles
-import './App.css';
+import "./App.css";
 
 function App() {
   return (
@@ -12,6 +12,6 @@ function App() {
       <h1> Replate </h1>
     </div>
   );
-}//end App
+} //end App
 
 export default App;
